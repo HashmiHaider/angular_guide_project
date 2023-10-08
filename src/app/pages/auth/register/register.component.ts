@@ -38,7 +38,7 @@ export class RegisterComponent {
   onRegister() {
     if (this.signupForm.valid) {
       this.toastService.showSuccessMessage('Login successful!');
-      this.router.navigate(['dashboard']);
+      this.router.navigate(['main']);
     } else {
       this.toastService.showSuccessMessage('Login Failed!');
     }

@@ -31,7 +31,7 @@ export class LoginPageComponent implements OnInit {
   onLogin() {
     if (this.loginForm.valid) {
       this.toastService.showSuccessMessage('Login successful!');
-      this.router.navigate(['dashboard']);
+      this.router.navigate(['main']);
     } else {
       this.toastService.showSuccessMessage('Login Failed!');
     }

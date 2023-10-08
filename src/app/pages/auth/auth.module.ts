@@ -26,7 +26,7 @@ const login_routes: Routes = [
         component: RegisterComponent,
       },
       {
-        path: 'dashboard',
+        path: 'main',
         loadChildren: () =>
           import('../main/main.module').then((m) => m.MainModule),
       },
