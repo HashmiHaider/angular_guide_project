@@ -5,22 +5,32 @@ import { MaterialModule } from 'src/app/material_module/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainComponent } from './main.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
+import { HomeComponent } from './home/home.component';
+import { ProductsComponent } from './products/products.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { DashBoardComponent } from './dash-board/dash-board.component';
 
-const login_routes: Routes = [
+const routes: Routes = [
   {
     path: '',
     component: MainComponent,
-    children: [],
+    children: [
+      {path:'',component:HomeComponent},
+      {path:'products',component:ProductsComponent},
+      {path:'dash-board',component:DashBoardComponent},
+      {path:'categories',component:CategoriesComponent},
+    ],
   },
+  
 ];
 @NgModule({
-  declarations: [MainComponent, TopBarComponent],
+  declarations: [MainComponent, TopBarComponent, HomeComponent, ProductsComponent, CategoriesComponent, DashBoardComponent],
   imports: [
     CommonModule,
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forChild(login_routes),
+    RouterModule.forChild(routes),
   ],
   providers: [],
 })
