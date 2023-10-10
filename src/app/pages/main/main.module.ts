@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { DashBoardComponent } from './dash-board/dash-board.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
 
 const routes: Routes = [
   {
@@ -24,7 +25,7 @@ const routes: Routes = [
   
 ];
 @NgModule({
-  declarations: [MainComponent, TopBarComponent, HomeComponent, ProductsComponent, CategoriesComponent, DashBoardComponent],
+  declarations: [MainComponent, TopBarComponent, HomeComponent, ProductsComponent, CategoriesComponent, DashBoardComponent,SideBarComponent],
   imports: [
     CommonModule,
     MaterialModule,
