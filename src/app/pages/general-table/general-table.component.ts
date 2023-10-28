@@ -45,6 +45,7 @@ export class GeneralTableComponent implements AfterViewInit, OnInit {
     this.searchQuery.emit(this.searchValue);
   }
   openFilter(column: string) {
+    console.log('Filter clicked for column', column);
     // Implement your filter logic here
     // You can use a dialog or menu to set filter criteria for the specified column
   }
