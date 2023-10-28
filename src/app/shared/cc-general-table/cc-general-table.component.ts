@@ -1,9 +1,13 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, Input, ViewChild } from '@angular/core';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import {
+  GeneralTableColumn,
+  GeneralTableConfig,
+} from './cc-general-table.model';
 
 export interface UserData {
   id: string;
@@ -65,6 +69,16 @@ export class CCGeneralTableComponent implements AfterViewInit {
   displayedColumns: string[] = ['id', 'name', 'progress', 'fruit'];
   dataSource: MatTableDataSource<UserData>;
 
+  tableConfig?: GeneralTableConfig<UserData>;
+  tableColumns: Array<GeneralTableColumn<UserData>> = [
+    // { name: 'select', title: '' },
+    { name: 'id', title: 'Id' },
+    { name: 'name', title: 'Value' },
+    { name: 'progress', title: 'Type' },
+    { name: 'fruit', title: 'Type' },
+    // { name: 'duration', title: 'Billing Period' },
+  ];
+
   @ViewChild(MatPaginator) paginator?: MatPaginator;
   @ViewChild(MatSort) sort?: MatSort;
 
@@ -74,6 +88,14 @@ export class CCGeneralTableComponent implements AfterViewInit {
 
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(users);
+
+    this.tableConfig = new GeneralTableConfig<UserData>({
+      tableColumns: this.tableColumns,
+      signalActions: [],
+      title: 'Bilal Title',
+      //  actions: [],
+      //  isReportView: this.isReportView,
+    });
   }
 
   ngAfterViewInit() {
