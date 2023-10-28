@@ -10,22 +10,31 @@ import { ProductsComponent } from './products/products.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { DashBoardComponent } from './dash-board/dash-board.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
+import { GeneralTableComponent } from '../general-table/general-table.component';
 
 const routes: Routes = [
   {
     path: '',
     component: MainComponent,
     children: [
-      {path:'',component:HomeComponent},
-      {path:'products',component:ProductsComponent},
-      {path:'dash-board',component:DashBoardComponent},
-      {path:'categories',component:CategoriesComponent},
+      { path: '', component: HomeComponent },
+      { path: 'products', component: ProductsComponent },
+      { path: 'dash-board', component: DashBoardComponent },
+      { path: 'categories', component: CategoriesComponent },
     ],
   },
-  
 ];
 @NgModule({
-  declarations: [MainComponent, TopBarComponent, HomeComponent, ProductsComponent, CategoriesComponent, DashBoardComponent,SideBarComponent],
+  declarations: [
+    MainComponent,
+    TopBarComponent,
+    HomeComponent,
+    ProductsComponent,
+    CategoriesComponent,
+    DashBoardComponent,
+    SideBarComponent,
+    GeneralTableComponent,
+  ],
   imports: [
     CommonModule,
     MaterialModule,
