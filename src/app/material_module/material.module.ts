@@ -9,6 +9,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [],
@@ -23,6 +26,9 @@ import { MatListModule } from '@angular/material/list';
     MatDatepickerModule,
     MatToolbarModule,
     MatListModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
   exports: [
     FlexLayoutModule,
@@ -34,6 +40,9 @@ import { MatListModule } from '@angular/material/list';
     MatDatepickerModule,
     MatToolbarModule,
     MatListModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
 })
 export class MaterialModule {}
